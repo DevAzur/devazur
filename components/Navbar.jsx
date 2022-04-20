@@ -2,6 +2,7 @@ import styles from "../styles/Navbar.module.css";
 import Link from "next/link";
 import { useState } from "react";
 import { GithubOutlined } from "@ant-design/icons";
+import Image from "next/image";
 
 const Navbar = () => {
   const [items, setItems] = useState([
@@ -12,27 +13,19 @@ const Navbar = () => {
 
   return (
     <div className={styles.container}>
-      <Link href="/">
-        <a className={styles.title}>
-          DEV<span className={styles.azur}>AZUR</span>
-        </a>
-      </Link>
-      <ul>
+      <div className={styles.logo_container}>
+        <Link href="/">
+          <Image src="/images/logo.png" width={120} height={50} className={styles.image}/>
+        </Link>
+      </div>
+      <div className={styles.items_container}>
         {items.map((item) => {
           return (
-            <li key={item.id} className={styles.listItem}>
-              <Link href={item.link}>
-                <a>{item.name}</a>
-              </Link>
-            </li>
+            <Link href={item.link} key={item.id}>
+              <a className={styles.items}>{item.name}</a>
+            </Link>
           );
         })}
-      </ul>
-      <div className={styles.icons_container}>
-        <GithubOutlined />
-        <Link href="https://github.com/DevAzur">
-          <a className={styles.icons_title}>Github</a>
-        </Link>
       </div>
     </div>
   );

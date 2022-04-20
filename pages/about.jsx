@@ -1,7 +1,7 @@
-const about = () => {
-  return (
-    <div>about</div>
-  )
-}
+import styles from "../styles/About.module.css";
 
-export default about
+const about = () => {
+  return <div className={styles.container}>about</div>;
+};
+
+export default about;
