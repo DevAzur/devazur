@@ -7,9 +7,16 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>DevAzur</title>
-        <meta name='description' content='DevAzur Homepage' />
+        <meta name="description" content="DevAzur Homepage" />
       </Head>
-      <h1>Homepage</h1>
+      <div className={styles.title_container}>
+        <h1 className={styles.title}>Hello,</h1>
+      </div>
+      <div className={styles.logo_container}>
+        <div className={styles.circle}>
+          <h1>Logo</h1>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
